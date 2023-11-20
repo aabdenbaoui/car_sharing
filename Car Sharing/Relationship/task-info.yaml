@@ -567,6 +567,288 @@ files:
           }
       }
     learner_created: false
+  - name: src/carsharing/db/carsharing.mv.db
+    visible: true
+    learner_created: true
+  - name: src/carsharing/db/carsharing.mv.db.trace.db
+    visible: true
+    learner_created: true
+  - name: src/carsharing/entities/Company.java
+    visible: true
+    text: |
+      package carsharing.entities;
+      
+      public class Company {
+          private String name;
+      
+          public String getName() {
+              return name;
+          }
+      
+          public void setName(String name) {
+              this.name = name;
+          }
+      
+          public Company(String name) {
+              this.name = name;
+          }
+      
+          @Override
+          public String toString() {
+              return "Company{" +
+                      "name='" + name + '\'' +
+                      '}';
+          }
+      }
+    learner_created: true
+  - name: src/carsharing/db/carsharing.mv.db.mv.db
+    visible: true
+    learner_created: true
+  - name: src/carsharing/DAO/CompanyDao.java
+    visible: true
+    text: |
+      package carsharing.DAO;
+      
+      import carsharing.entities.Company;
+      
+      import java.util.List;
+      
+      public interface CompanyDao {
+          List<Company> findAll();
+          Company findById(int id);
+          void add(Company developer);
+          void update(Company developer);
+          void deleteById(int id);
+      }
+    learner_created: true
+  - name: src/carsharing/db/carsharing.trace.db
+    visible: true
+    learner_created: true
+  - name: src/carsharing/DAO/DbCompanyDao.java
+    visible: true
+    text: |
+      package carsharing.DAO;
+      
+      import carsharing.DbClient;
+      import carsharing.entities.Company;
+      import carsharing.entities.ConnectionFactory;
+      import org.h2.jdbcx.JdbcDataSource;
+      
+      import java.sql.*;
+      import java.util.ArrayList;
+      import java.util.List;
+      
+      public class DbCompanyDao implements CompanyDao {
+          static final String JDBC_DRIVER = "org.h2.Driver";
+          static final String DB_URL = "jdbc:h2:./src/carsharing/db/carsharing";
+          private static final String CREATE_DB =
+                  "CREATE TABLE IF NOT EXISTS COMPANY (id int NOT NULL AUTO_INCREMENT, name VARCHAR(255) UNIQUE NOT NULL," +
+                          "PRIMARY KEY(id));";
+          private static final String SELECT_ALL = "SELECT * FROM COMPANY";
+          private static final String SELECT = "SELECT * FROM COMPANY WHERE id = %d";
+          private static final String INSERT_DATA = "INSERT INTO COMPANY(name) VALUES (?)";
+          private static final String UPDATE_DATA = "UPDATE COMPANY SET name " +
+                  "= '%s' WHERE id = %d";
+          private static final String DELETE_DATA = "DELETE FROM COMPANY WHERE id = %d";
+      
+          private ConnectionFactory factory;
+      
+          public DbCompanyDao(String fileName) {
+              this.factory = new ConnectionFactory(fileName);
+              try (
+                      Connection connection = this.factory.getConnection();
+                      PreparedStatement stmt = connection.prepareStatement(CREATE_DB);
+              ) {
+                  stmt.executeUpdate();
+              } catch (SQLException se) {
+                  se.printStackTrace();
+                  throw new RuntimeException(se);
+              }
+          }
+      
+          @Override
+          public List<Company> findAll() {
+              List<Company> companies = new ArrayList<>();
+      
+              try (Connection con = factory.getConnection();
+                   Statement statement = con.createStatement();
+                   ResultSet resultSetItem = statement.executeQuery(SELECT_ALL)
+              ) {
+                  while (resultSetItem.next()) {
+                      // Retrieve column values
+      //                int id = resultSetItem.getInt("id");
+                      String name = resultSetItem.getString("name");
+                      Company company = new Company(name);
+                      companies.add(company);
+                  }
+      
+                  return companies;
+              } catch (SQLException e) {
+                  e.printStackTrace();
+              }
+      
+              return companies;
+          }
+      
+          @Override
+          public Company findById(int id) {
+              return null;
+          }
+      
+          @Override
+          public void add(Company company) {
+      
+              try (
+                      Connection connection = this.factory.getConnection();
+                      PreparedStatement stmt = connection.prepareStatement(INSERT_DATA);
+              ) {
+                  stmt.setString(1, company.getName());
+                  stmt.executeUpdate();
+              } catch (SQLException se) {
+                  se.printStackTrace();
+                  throw new RuntimeException(se);
+              }
+      
+          }
+      
+          @Override
+          public void update(Company company) {
+      
+          }
+      
+          @Override
+          public void deleteById(int id) {
+      
+          }
+      }
+    learner_created: true
+  - name: src/carsharing/DbClient.java
+    visible: true
+    text: |-
+      package carsharing;
+      
+      import carsharing.entities.Company;
+      
+      import javax.sql.DataSource;
+      import java.sql.*;
+      import java.util.ArrayList;
+      import java.util.List;
+      
+      public class DbClient {
+          private final DataSource dataSource;
+      
+          public DbClient(DataSource dataSource) {
+              this.dataSource = dataSource;
+          }
+          public void run(String str) {
+              try (Connection con = dataSource.getConnection(); // Statement creation
+                   PreparedStatement preparedStatement = con.prepareStatement(str)
+              ) {
+      //            statement.executeUpdate(str); // Statement execution
+                  int count = preparedStatement.executeUpdate();
+                  if(count > 0){
+                      System.out.println("Company was added successfully ");
+                  }
+      
+              } catch (SQLException e) {
+                  e.printStackTrace();
+              }
+          }
+          public void run(String str, Company company) {
+              try (Connection con = dataSource.getConnection(); // Statement creation
+                   PreparedStatement preparedStatement = con.prepareStatement(str)
+              ) {
+      //            statement.executeUpdate(str); // Statement execution
+                  preparedStatement.setString(1, company.getName());
+                  int count = preparedStatement.executeUpdate();
+      
+                  if(count > 0){
+                      System.out.println("Company was added successfully ");
+                  }
+      
+              } catch (SQLException e) {
+                  e.printStackTrace();
+              }
+          }
+      
+          public Company select(String query) {
+              List<Company> developers = selectForList(query);
+              if (developers.size() == 1) {
+                  return developers.get(0);
+              } else if (developers.size() == 0) {
+                  return null;
+              } else {
+                  throw new IllegalStateException("Query returned more than one object");
+              }
+          }
+      
+          public List<Company> selectForList(String query) {
+              List<Company> companies = new ArrayList<>();
+      
+              try (Connection con = dataSource.getConnection();
+                   Statement statement = con.createStatement();
+                   ResultSet resultSetItem = statement.executeQuery(query)
+              ) {
+                  while (resultSetItem.next()) {
+                      // Retrieve column values
+      //                int id = resultSetItem.getInt("id");
+                      String name = resultSetItem.getString("name");
+                      Company company = new Company(name);
+                      companies.add(company);
+                  }
+      
+                  return companies;
+              } catch (SQLException e) {
+                  e.printStackTrace();
+              }
+      
+              return companies;
+          }
+      }
+    learner_created: true
+  - name: src/carsharing/entities/ConnectionFactory.java
+    visible: true
+    text: |-
+      package carsharing.entities;
+      
+      import java.sql.Connection;
+      import java.sql.DriverManager;
+      import java.sql.SQLException;
+      
+      public class ConnectionFactory {
+          // JDBC driver name and database URL
+          private static final String FILE_SEPARATOR = System.getProperty("file.separator");
+          private static final String JDBC_DRIVER = "org.h2.Driver";
+          private static final String DB_URL = "jdbc:h2:." +
+                  FILE_SEPARATOR + "src" + FILE_SEPARATOR +
+                  "carsharing" + FILE_SEPARATOR + "db" +
+                  FILE_SEPARATOR;
+      
+          //  Database credentials
+          private static final String USER = "";
+          private static final String PASS = "";
+      
+          private String databaseFileName;
+      
+          public ConnectionFactory(String fileName) {
+              this.databaseFileName = fileName;
+          }
+      
+          public Connection getConnection() {
+              try {
+                  Class.forName(JDBC_DRIVER);
+                  Connection conn = DriverManager.getConnection(DB_URL +
+                          this.databaseFileName, USER, PASS);
+                  conn.setAutoCommit(true);
+                  return conn;
+              } catch (SQLException e) {
+                  throw new RuntimeException(e);
+              } catch (ClassNotFoundException e) {
+                  throw new RuntimeException(e);
+              }
+          }
+      }
+    learner_created: true
 feedback_link: https://hyperskill.org/learn/step/11503#comment
 status: Unchecked
 record: -1

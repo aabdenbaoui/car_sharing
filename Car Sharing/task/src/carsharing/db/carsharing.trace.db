@@ -1,3 +1,9 @@
 2023-11-17 21:32:11 jdbc[4]: exception
 org.h2.jdbc.JdbcSQLSyntaxErrorException: Table "COMPANY" already exists; SQL statement:
 CREATE TABLE   COMPANY (id INT not NULL,  NAME VARCHAR(255),  PRIMARY KEY ( id )) [42101-200]
+2023-11-20 11:49:45 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Table "COMPANY" not found; SQL statement:
+DROP TABLE COMPANY; [42102-200]
+2023-11-20 11:52:19 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Syntax error in SQL statement "CREATE TABLE IF NOT EXISTS COMPANY (ID INT NOT NULL AUTO_INCREMENT, NAME VARCHAR(255) UNIQUE NOT NULL,PRIMARY KEY(ID);[*]"; expected "INDEX, ,, )"; SQL statement:
+CREATE TABLE IF NOT EXISTS COMPANY (id int NOT NULL AUTO_INCREMENT, name VARCHAR(255) UNIQUE NOT NULL,PRIMARY KEY(id); [42001-200]

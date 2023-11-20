@@ -356,12 +356,27 @@ files:
   - name: src/carsharing/DAO/CompanyDao.java
     visible: true
     learner_created: true
-  - name: src/carsharing/DAO/InMemoryCompanyDao.java
+  - name: src/carsharing/DbClient.java
+    visible: true
+    learner_created: true
+  - name: src/carsharing/DAO/DbCompanyDao.java
+    visible: true
+    learner_created: true
+  - name: src/carsharing/db/carsharing.mv.db
+    visible: true
+    learner_created: true
+  - name: src/carsharing/entities/ConnectionFactory.java
+    visible: true
+    learner_created: true
+  - name: src/carsharing/db/carsharing.mv.db.trace.db
+    visible: true
+    learner_created: true
+  - name: src/carsharing/db/carsharing.mv.db.mv.db
     visible: true
     learner_created: true
 feedback_link: https://hyperskill.org/learn/step/11502#comment
-status: Failed
+status: Solved
 feedback:
-  message: Execution failed
-  time: "Sun, 19 Nov 2023 17:44:57 UTC"
-record: -1
+  message: Congratulations!
+  time: "Mon, 20 Nov 2023 16:53:02 UTC"
+record: 2

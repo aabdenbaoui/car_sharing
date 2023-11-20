@@ -1,0 +1,314 @@
+2023-11-19 20:49:38 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Column count does not match; SQL statement:
+INSERT INTO COMPANY VALUES ('aniss') [21002-200]
+	at org.h2.message.DbException.getJdbcSQLException(DbException.java:453)
+	at org.h2.message.DbException.getJdbcSQLException(DbException.java:429)
+	at org.h2.message.DbException.get(DbException.java:205)
+	at org.h2.message.DbException.get(DbException.java:181)
+	at org.h2.message.DbException.get(DbException.java:170)
+	at org.h2.command.dml.Insert.prepare(Insert.java:319)
+	at org.h2.command.Parser.prepareCommand(Parser.java:744)
+	at org.h2.engine.Session.prepareLocal(Session.java:657)
+	at org.h2.engine.Session.prepareCommand(Session.java:595)
+	at org.h2.jdbc.JdbcConnection.prepareCommand(JdbcConnection.java:1235)
+	at org.h2.jdbc.JdbcStatement.executeUpdateInternal(JdbcStatement.java:164)
+	at org.h2.jdbc.JdbcStatement.executeUpdate(JdbcStatement.java:126)
+	at carsharing.DbClient.run(DbClient.java:24)
+	at carsharing.DAO.DbCompanyDao.add(DbCompanyDao.java:46)
+	at carsharing.Main.main(Main.java:14)
+2023-11-19 21:25:32 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Column count does not match; SQL statement:
+INSERT INTO COMPANY VALUES ('kk\') [21002-200]
+	at org.h2.message.DbException.getJdbcSQLException(DbException.java:453)
+	at org.h2.message.DbException.getJdbcSQLException(DbException.java:429)
+	at org.h2.message.DbException.get(DbException.java:205)
+	at org.h2.message.DbException.get(DbException.java:181)
+	at org.h2.message.DbException.get(DbException.java:170)
+	at org.h2.command.dml.Insert.prepare(Insert.java:319)
+	at org.h2.command.Parser.prepareCommand(Parser.java:744)
+	at org.h2.engine.Session.prepareLocal(Session.java:657)
+	at org.h2.engine.Session.prepareCommand(Session.java:595)
+	at org.h2.jdbc.JdbcConnection.prepareCommand(JdbcConnection.java:1235)
+	at org.h2.jdbc.JdbcStatement.executeUpdateInternal(JdbcStatement.java:164)
+	at org.h2.jdbc.JdbcStatement.executeUpdate(JdbcStatement.java:126)
+	at carsharing.DbClient.run(DbClient.java:25)
+	at carsharing.DAO.DbCompanyDao.add(DbCompanyDao.java:47)
+	at carsharing.Main.createCompany(Main.java:69)
+	at carsharing.Main.managerChoices(Main.java:48)
+	at carsharing.Main.mainMenu(Main.java:25)
+	at carsharing.Main.main(Main.java:13)
+2023-11-19 21:26:15 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Syntax error in SQL statement "CREATE TABLE IF NOT EXISTS COMPANY(ID INTEGER PRIMARY KEY AUT[*] INCREMENT,NAME TEXT NOT NULL UNIQUE);"; expected "HASH, AUTO_INCREMENT, NOT, NULL, COMMENT, CHECK, REFERENCES, ,, )"; SQL statement:
+CREATE TABLE IF NOT EXISTS COMPANY(id INTEGER PRIMARY KEY AUT INCREMENT,name TEXT NOT NULL UNIQUE); [42001-200]
+2023-11-19 21:27:08 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Column count does not match; SQL statement:
+INSERT INTO COMPANY VALUES ('anuss') [21002-200]
+	at org.h2.message.DbException.getJdbcSQLException(DbException.java:453)
+	at org.h2.message.DbException.getJdbcSQLException(DbException.java:429)
+	at org.h2.message.DbException.get(DbException.java:205)
+	at org.h2.message.DbException.get(DbException.java:181)
+	at org.h2.message.DbException.get(DbException.java:170)
+	at org.h2.command.dml.Insert.prepare(Insert.java:319)
+	at org.h2.command.Parser.prepareCommand(Parser.java:744)
+	at org.h2.engine.Session.prepareLocal(Session.java:657)
+	at org.h2.engine.Session.prepareCommand(Session.java:595)
+	at org.h2.jdbc.JdbcConnection.prepareCommand(JdbcConnection.java:1235)
+	at org.h2.jdbc.JdbcStatement.executeUpdateInternal(JdbcStatement.java:164)
+	at org.h2.jdbc.JdbcStatement.executeUpdate(JdbcStatement.java:126)
+	at carsharing.DbClient.run(DbClient.java:25)
+	at carsharing.DAO.DbCompanyDao.add(DbCompanyDao.java:47)
+	at carsharing.Main.createCompany(Main.java:69)
+	at carsharing.Main.managerChoices(Main.java:48)
+	at carsharing.Main.mainMenu(Main.java:25)
+	at carsharing.Main.main(Main.java:13)
+2023-11-19 21:29:56 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Syntax error in SQL statement "CREATE TABLE IF NOT EXISTS COMPANY(ID INTEGER PRIMARY KEY IDENTITY[*],NAME TEXT NOT NULL UNIQUE);"; expected "HASH, AUTO_INCREMENT, NOT, NULL, COMMENT, CHECK, REFERENCES, ,, )"; SQL statement:
+CREATE TABLE IF NOT EXISTS COMPANY(id INTEGER PRIMARY KEY IDENTITY,name TEXT NOT NULL UNIQUE); [42001-200]
+2023-11-19 21:29:58 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Column count does not match; SQL statement:
+INSERT INTO COMPANY VALUES ('aniss') [21002-200]
+	at org.h2.message.DbException.getJdbcSQLException(DbException.java:453)
+	at org.h2.message.DbException.getJdbcSQLException(DbException.java:429)
+	at org.h2.message.DbException.get(DbException.java:205)
+	at org.h2.message.DbException.get(DbException.java:181)
+	at org.h2.message.DbException.get(DbException.java:170)
+	at org.h2.command.dml.Insert.prepare(Insert.java:319)
+	at org.h2.command.Parser.prepareCommand(Parser.java:744)
+	at org.h2.engine.Session.prepareLocal(Session.java:657)
+	at org.h2.engine.Session.prepareCommand(Session.java:595)
+	at org.h2.jdbc.JdbcConnection.prepareCommand(JdbcConnection.java:1235)
+	at org.h2.jdbc.JdbcStatement.executeUpdateInternal(JdbcStatement.java:164)
+	at org.h2.jdbc.JdbcStatement.executeUpdate(JdbcStatement.java:126)
+	at carsharing.DbClient.run(DbClient.java:25)
+	at carsharing.DAO.DbCompanyDao.add(DbCompanyDao.java:47)
+	at carsharing.Main.createCompany(Main.java:69)
+	at carsharing.Main.managerChoices(Main.java:48)
+	at carsharing.Main.mainMenu(Main.java:25)
+	at carsharing.Main.main(Main.java:13)
+2023-11-19 21:31:39 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Syntax error in SQL statement "CREATE TABLE IF NOT EXISTS COMPANY(ID INTEGER PRIMARY KEY NOT NULL AUTO_INCREMENT[*],NAME TEXT NOT NULL UNIQUE);"; expected "COMMENT, CHECK, REFERENCES, ,, )"; SQL statement:
+CREATE TABLE IF NOT EXISTS COMPANY(id INTEGER PRIMARY KEY NOT NULL AUTO_INCREMENT,name TEXT NOT NULL UNIQUE); [42001-200]
+2023-11-19 21:33:09 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Syntax error in SQL statement "CREATE TABLE IF NOT EXISTS COMPANY(ID INT NOT NULL AUTO_INCREMENT,NAME TEXT NOT NULL UNIQUEPRIMARY[*] KEY(ID);"; expected "AS, DEFAULT, GENERATED, ON, NOT, NULL, AUTO_INCREMENT, BIGSERIAL, SERIAL, IDENTITY, NULL_TO_DEFAULT, SEQUENCE, SELECTIVITY, COMMENT, CONSTRAINT, PRIMARY, UNIQUE, NOT, NULL, COMMENT, CHECK, REFERENCES, ,, )"; SQL statement:
+CREATE TABLE IF NOT EXISTS COMPANY(id int NOT NULL AUTO_INCREMENT,name TEXT NOT NULL UNIQUEPRIMARY KEY(id); [42001-200]
+2023-11-19 21:33:44 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Syntax error in SQL statement "CREATE TABLE IF NOT EXISTS COMPANY(ID INT NOT NULL AUTO_INCREMENT,NAME TEXT NOT NULL UNIQUEPRIMARY[*] KEY(ID));"; expected "AS, DEFAULT, GENERATED, ON, NOT, NULL, AUTO_INCREMENT, BIGSERIAL, SERIAL, IDENTITY, NULL_TO_DEFAULT, SEQUENCE, SELECTIVITY, COMMENT, CONSTRAINT, PRIMARY, UNIQUE, NOT, NULL, COMMENT, CHECK, REFERENCES, ,, )"; SQL statement:
+CREATE TABLE IF NOT EXISTS COMPANY(id int NOT NULL AUTO_INCREMENT,name TEXT NOT NULL UNIQUEPRIMARY KEY(id)); [42001-200]
+2023-11-19 21:45:25 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Syntax error in SQL statement "CREATE TABLE IF NOT EXISTS COMPANY(ID INT NOT NULL AUTO_INCREMENT,NAME VARCHAR(255) UNIQUE NOT NULLPRIMARY[*] KEY (ID));"; expected "NULL"; SQL statement:
+CREATE TABLE IF NOT EXISTS COMPANY(id int NOT NULL AUTO_INCREMENT,name VARCHAR(255) UNIQUE NOT NULLPRIMARY KEY (id)); [42001-200]
+2023-11-19 21:46:43 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Syntax error in SQL statement "CREATE TABLE IF NOT EXISTS COMPANY(ID INT NOT NULL AUTO_INCREMENT,NAME VARCHAR(255) UNIQUEPRIMARY[*] KEY (ID));"; expected "FOR, UNSIGNED, INVISIBLE, VISIBLE, NOT, NULL, AS, DEFAULT, GENERATED, ON, NOT, NULL, AUTO_INCREMENT, BIGSERIAL, SERIAL, IDENTITY, NULL_TO_DEFAULT, SEQUENCE, SELECTIVITY, COMMENT, CONSTRAINT, PRIMARY, UNIQUE, NOT, NULL, COMMENT, CHECK, REFERENCES, ,, )"; SQL statement:
+CREATE TABLE IF NOT EXISTS COMPANY(id int NOT NULL AUTO_INCREMENT,name VARCHAR(255) UNIQUEPRIMARY KEY (id)); [42001-200]
+2023-11-19 21:47:17 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Syntax error in SQL statement "CREATE TABLE IF NOT EXISTS COMPANY(ID INT NOT NULL AUTO_INCREMENT,NAME VARCHAR(255)PRIMARY KEY ([*]ID));"; expected "HASH, AUTO_INCREMENT, NOT, NULL, COMMENT, CHECK, REFERENCES, ,, )"; SQL statement:
+CREATE TABLE IF NOT EXISTS COMPANY(id int NOT NULL AUTO_INCREMENT,name VARCHAR(255)PRIMARY KEY (id)); [42001-200]
+2023-11-19 21:50:17 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Syntax error in SQL statement "CREATE TABLE COMPANY ( ID INT AUTO_INCREMENT,NAME VARCHAR(255)PRIMARY KEY ([*]ID));"; expected "HASH, AUTO_INCREMENT, NOT, NULL, COMMENT, CHECK, REFERENCES, ,, )"; SQL statement:
+CREATE TABLE COMPANY ( id int AUTO_INCREMENT,name VARCHAR(255)PRIMARY KEY (id)); [42001-200]
+2023-11-19 21:51:58 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Table "COMPANY" already exists; SQL statement:
+CREATE TABLE COMPANY ( id int AUTO_INCREMENT,name VARCHAR(255) NOT NULL,PRIMARY KEY (id)); [42101-200]
+2023-11-19 21:54:16 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Column "AUTO_INCREMENT" not found; SQL statement:
+CREATE TABLE IF NOT EXISTS COMPANY ( id int DEFAULT AUTO_INCREMENT,name VARCHAR(255) NOT NULL,PRIMARY KEY (id)); [42122-200]
+	at org.h2.message.DbException.getJdbcSQLException(DbException.java:453)
+	at org.h2.message.DbException.getJdbcSQLException(DbException.java:429)
+	at org.h2.message.DbException.get(DbException.java:205)
+	at org.h2.message.DbException.get(DbException.java:181)
+	at org.h2.expression.ExpressionColumn.getColumnException(ExpressionColumn.java:163)
+	at org.h2.expression.ExpressionColumn.optimize(ExpressionColumn.java:145)
+	at org.h2.table.Column.setDefaultExpression(Column.java:245)
+	at org.h2.command.Parser.parseColumnForTable(Parser.java:5728)
+	at org.h2.command.Parser.parseTableColumnDefinition(Parser.java:8442)
+	at org.h2.command.Parser.parseCreateTable(Parser.java:8379)
+	at org.h2.command.Parser.parseCreate(Parser.java:6276)
+	at org.h2.command.Parser.parsePrepared(Parser.java:903)
+	at org.h2.command.Parser.parse(Parser.java:843)
+	at org.h2.command.Parser.parse(Parser.java:815)
+	at org.h2.command.Parser.prepareCommand(Parser.java:738)
+	at org.h2.engine.Session.prepareLocal(Session.java:657)
+	at org.h2.engine.Session.prepareCommand(Session.java:595)
+	at org.h2.jdbc.JdbcConnection.prepareCommand(JdbcConnection.java:1235)
+	at org.h2.jdbc.JdbcStatement.executeUpdateInternal(JdbcStatement.java:164)
+	at org.h2.jdbc.JdbcStatement.executeUpdate(JdbcStatement.java:126)
+	at carsharing.DbClient.run(DbClient.java:25)
+	at carsharing.DAO.DbCompanyDao.<init>(DbCompanyDao.java:31)
+	at carsharing.Main.createCompany(Main.java:63)
+	at carsharing.Main.managerChoices(Main.java:48)
+	at carsharing.Main.mainMenu(Main.java:25)
+	at carsharing.Main.main(Main.java:13)
+2023-11-19 21:54:42 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Syntax error in SQL statement "CREATE TABLE IF NOT EXISTS COMPANY ( ID INT  AUTO_INCREMENT DEFAULT[*],NAME VARCHAR(255) NOT NULL,PRIMARY KEY (ID));"; expected "(, NOT, NULL, NULL_TO_DEFAULT, SEQUENCE, SELECTIVITY, COMMENT, CONSTRAINT, PRIMARY, UNIQUE, NOT, NULL, COMMENT, CHECK, REFERENCES, ,, )"; SQL statement:
+CREATE TABLE IF NOT EXISTS COMPANY ( id int  AUTO_INCREMENT DEFAULT,name VARCHAR(255) NOT NULL,PRIMARY KEY (id)); [42001-200]
+2023-11-19 22:04:08 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLNonTransientException: This method is not allowed for a prepared statement; use a regular statement instead. [90130-200]
+	at org.h2.message.DbException.getJdbcSQLException(DbException.java:505)
+	at org.h2.message.DbException.getJdbcSQLException(DbException.java:429)
+	at org.h2.message.DbException.get(DbException.java:205)
+	at org.h2.message.DbException.get(DbException.java:181)
+	at org.h2.message.DbException.get(DbException.java:170)
+	at org.h2.jdbc.JdbcPreparedStatement.executeUpdate(JdbcPreparedStatement.java:322)
+	at carsharing.DbClient.run(DbClient.java:22)
+	at carsharing.DAO.DbCompanyDao.<init>(DbCompanyDao.java:31)
+	at carsharing.Main.createCompany(Main.java:63)
+	at carsharing.Main.managerChoices(Main.java:48)
+	at carsharing.Main.mainMenu(Main.java:25)
+	at carsharing.Main.main(Main.java:13)
+2023-11-19 22:20:11 database: flush
+org.h2.message.DbException: General error: "org.h2.mvstore.MVStoreException: The write format 1 is smaller than the supported format 2 [2.1.214/5]" [50000-214]
+	at org.h2.message.DbException.get(DbException.java:212)
+	at org.h2.message.DbException.convert(DbException.java:395)
+	at org.h2.mvstore.db.Store.lambda$new$0(Store.java:125)
+	at org.h2.mvstore.MVStore.handleException(MVStore.java:3318)
+	at org.h2.mvstore.MVStore.panic(MVStore.java:593)
+	at org.h2.mvstore.MVStore.<init>(MVStore.java:469)
+	at org.h2.mvstore.MVStore$Builder.open(MVStore.java:4082)
+	at org.h2.mvstore.db.Store.<init>(Store.java:136)
+	at org.h2.engine.Database.<init>(Database.java:324)
+	at org.h2.engine.Engine.openSession(Engine.java:92)
+	at org.h2.engine.Engine.openSession(Engine.java:222)
+	at org.h2.engine.Engine.createSession(Engine.java:201)
+	at org.h2.engine.SessionRemote.connectEmbeddedOrServer(SessionRemote.java:338)
+	at org.h2.jdbc.JdbcConnection.<init>(JdbcConnection.java:122)
+	at org.h2.jdbcx.JdbcDataSource.getConnection(JdbcDataSource.java:155)
+	at carsharing.DbClient.run(DbClient.java:17)
+	at carsharing.DAO.DbCompanyDao.<init>(DbCompanyDao.java:31)
+	at carsharing.Main.createCompany(Main.java:63)
+	at carsharing.Main.managerChoices(Main.java:48)
+	at carsharing.Main.mainMenu(Main.java:25)
+	at carsharing.Main.main(Main.java:13)
+Caused by: org.h2.jdbc.JdbcSQLNonTransientException: General error: "org.h2.mvstore.MVStoreException: The write format 1 is smaller than the supported format 2 [2.1.214/5]" [50000-214]
+	at org.h2.message.DbException.getJdbcSQLException(DbException.java:554)
+	at org.h2.message.DbException.getJdbcSQLException(DbException.java:477)
+	... 21 more
+Caused by: org.h2.mvstore.MVStoreException: The write format 1 is smaller than the supported format 2 [2.1.214/5]
+	at org.h2.mvstore.DataUtils.newMVStoreException(DataUtils.java:1004)
+	at org.h2.mvstore.MVStore.getUnsupportedWriteFormatException(MVStore.java:1066)
+	at org.h2.mvstore.MVStore.readStoreHeader(MVStore.java:886)
+	at org.h2.mvstore.MVStore.<init>(MVStore.java:463)
+	... 15 more
+2023-11-19 22:20:11 database: opening C:/Users/Osprey/Downloads/_3c3ec51e972ae18cabe2019f6aa77791_OOPStarterCode/Car Sharing/src/carsharing/db/carsharing
+org.h2.message.DbException: Unsupported database file version or invalid file header in file "C:/Users/Osprey/Downloads/_3c3ec51e972ae18cabe2019f6aa77791_OOPStarterCode/Car Sharing/src/carsharing/db/carsharing.mv.db" [90048-214]
+	at org.h2.message.DbException.get(DbException.java:212)
+	at org.h2.mvstore.db.Store.convertMVStoreException(Store.java:161)
+	at org.h2.mvstore.db.Store.<init>(Store.java:145)
+	at org.h2.engine.Database.<init>(Database.java:324)
+	at org.h2.engine.Engine.openSession(Engine.java:92)
+	at org.h2.engine.Engine.openSession(Engine.java:222)
+	at org.h2.engine.Engine.createSession(Engine.java:201)
+	at org.h2.engine.SessionRemote.connectEmbeddedOrServer(SessionRemote.java:338)
+	at org.h2.jdbc.JdbcConnection.<init>(JdbcConnection.java:122)
+	at org.h2.jdbcx.JdbcDataSource.getConnection(JdbcDataSource.java:155)
+	at carsharing.DbClient.run(DbClient.java:17)
+	at carsharing.DAO.DbCompanyDao.<init>(DbCompanyDao.java:31)
+	at carsharing.Main.createCompany(Main.java:63)
+	at carsharing.Main.managerChoices(Main.java:48)
+	at carsharing.Main.mainMenu(Main.java:25)
+	at carsharing.Main.main(Main.java:13)
+Caused by: org.h2.jdbc.JdbcSQLNonTransientConnectionException: Unsupported database file version or invalid file header in file "C:/Users/Osprey/Downloads/_3c3ec51e972ae18cabe2019f6aa77791_OOPStarterCode/Car Sharing/src/carsharing/db/carsharing.mv.db" [90048-214]
+	at org.h2.message.DbException.getJdbcSQLException(DbException.java:678)
+	at org.h2.message.DbException.getJdbcSQLException(DbException.java:477)
+	... 16 more
+Caused by: org.h2.mvstore.MVStoreException: The write format 1 is smaller than the supported format 2 [2.1.214/5]
+	at org.h2.mvstore.DataUtils.newMVStoreException(DataUtils.java:1004)
+	at org.h2.mvstore.MVStore.getUnsupportedWriteFormatException(MVStore.java:1066)
+	at org.h2.mvstore.MVStore.readStoreHeader(MVStore.java:886)
+	at org.h2.mvstore.MVStore.<init>(MVStore.java:463)
+	at org.h2.mvstore.MVStore$Builder.open(MVStore.java:4082)
+	at org.h2.mvstore.db.Store.<init>(Store.java:136)
+	... 13 more
+2023-11-19 22:22:40 database: flush
+org.h2.message.DbException: General error: "org.h2.mvstore.MVStoreException: The write format 1 is smaller than the supported format 2 [2.1.214/5]" [50000-214]
+	at org.h2.message.DbException.get(DbException.java:212)
+	at org.h2.message.DbException.convert(DbException.java:395)
+	at org.h2.mvstore.db.Store.lambda$new$0(Store.java:125)
+	at org.h2.mvstore.MVStore.handleException(MVStore.java:3318)
+	at org.h2.mvstore.MVStore.panic(MVStore.java:593)
+	at org.h2.mvstore.MVStore.<init>(MVStore.java:469)
+	at org.h2.mvstore.MVStore$Builder.open(MVStore.java:4082)
+	at org.h2.mvstore.db.Store.<init>(Store.java:136)
+	at org.h2.engine.Database.<init>(Database.java:324)
+	at org.h2.engine.Engine.openSession(Engine.java:92)
+	at org.h2.engine.Engine.openSession(Engine.java:222)
+	at org.h2.engine.Engine.createSession(Engine.java:201)
+	at org.h2.engine.SessionRemote.connectEmbeddedOrServer(SessionRemote.java:338)
+	at org.h2.jdbc.JdbcConnection.<init>(JdbcConnection.java:122)
+	at org.h2.jdbcx.JdbcDataSource.getConnection(JdbcDataSource.java:155)
+	at carsharing.DbClient.run(DbClient.java:17)
+	at carsharing.DAO.DbCompanyDao.<init>(DbCompanyDao.java:31)
+	at carsharing.Main.createCompany(Main.java:63)
+	at carsharing.Main.managerChoices(Main.java:48)
+	at carsharing.Main.mainMenu(Main.java:25)
+	at carsharing.Main.main(Main.java:13)
+Caused by: org.h2.jdbc.JdbcSQLNonTransientException: General error: "org.h2.mvstore.MVStoreException: The write format 1 is smaller than the supported format 2 [2.1.214/5]" [50000-214]
+	at org.h2.message.DbException.getJdbcSQLException(DbException.java:554)
+	at org.h2.message.DbException.getJdbcSQLException(DbException.java:477)
+	... 21 more
+Caused by: org.h2.mvstore.MVStoreException: The write format 1 is smaller than the supported format 2 [2.1.214/5]
+	at org.h2.mvstore.DataUtils.newMVStoreException(DataUtils.java:1004)
+	at org.h2.mvstore.MVStore.getUnsupportedWriteFormatException(MVStore.java:1066)
+	at org.h2.mvstore.MVStore.readStoreHeader(MVStore.java:886)
+	at org.h2.mvstore.MVStore.<init>(MVStore.java:463)
+	... 15 more
+2023-11-19 22:22:40 database: opening C:/Users/Osprey/Downloads/_3c3ec51e972ae18cabe2019f6aa77791_OOPStarterCode/Car Sharing/src/carsharing/db/carsharing
+org.h2.message.DbException: Unsupported database file version or invalid file header in file "C:/Users/Osprey/Downloads/_3c3ec51e972ae18cabe2019f6aa77791_OOPStarterCode/Car Sharing/src/carsharing/db/carsharing.mv.db" [90048-214]
+	at org.h2.message.DbException.get(DbException.java:212)
+	at org.h2.mvstore.db.Store.convertMVStoreException(Store.java:161)
+	at org.h2.mvstore.db.Store.<init>(Store.java:145)
+	at org.h2.engine.Database.<init>(Database.java:324)
+	at org.h2.engine.Engine.openSession(Engine.java:92)
+	at org.h2.engine.Engine.openSession(Engine.java:222)
+	at org.h2.engine.Engine.createSession(Engine.java:201)
+	at org.h2.engine.SessionRemote.connectEmbeddedOrServer(SessionRemote.java:338)
+	at org.h2.jdbc.JdbcConnection.<init>(JdbcConnection.java:122)
+	at org.h2.jdbcx.JdbcDataSource.getConnection(JdbcDataSource.java:155)
+	at carsharing.DbClient.run(DbClient.java:17)
+	at carsharing.DAO.DbCompanyDao.<init>(DbCompanyDao.java:31)
+	at carsharing.Main.createCompany(Main.java:63)
+	at carsharing.Main.managerChoices(Main.java:48)
+	at carsharing.Main.mainMenu(Main.java:25)
+	at carsharing.Main.main(Main.java:13)
+Caused by: org.h2.jdbc.JdbcSQLNonTransientConnectionException: Unsupported database file version or invalid file header in file "C:/Users/Osprey/Downloads/_3c3ec51e972ae18cabe2019f6aa77791_OOPStarterCode/Car Sharing/src/carsharing/db/carsharing.mv.db" [90048-214]
+	at org.h2.message.DbException.getJdbcSQLException(DbException.java:678)
+	at org.h2.message.DbException.getJdbcSQLException(DbException.java:477)
+	... 16 more
+Caused by: org.h2.mvstore.MVStoreException: The write format 1 is smaller than the supported format 2 [2.1.214/5]
+	at org.h2.mvstore.DataUtils.newMVStoreException(DataUtils.java:1004)
+	at org.h2.mvstore.MVStore.getUnsupportedWriteFormatException(MVStore.java:1066)
+	at org.h2.mvstore.MVStore.readStoreHeader(MVStore.java:886)
+	at org.h2.mvstore.MVStore.<init>(MVStore.java:463)
+	at org.h2.mvstore.MVStore$Builder.open(MVStore.java:4082)
+	at org.h2.mvstore.db.Store.<init>(Store.java:136)
+	... 13 more
+2023-11-19 23:31:06 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Syntax error in SQL statement "CREATE TABLE IF NOT EXISTS COMPANY (NAME VARCHAR(255) NOT NULL,)[*];"; expected "identifier"; SQL statement:
+CREATE TABLE IF NOT EXISTS COMPANY (name VARCHAR(255) NOT NULL,); [42001-200]
+2023-11-19 23:32:56 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLDataException: Invalid value "1" for parameter "parameterIndex" [90008-200]
+	at org.h2.message.DbException.getJdbcSQLException(DbException.java:590)
+	at org.h2.message.DbException.getJdbcSQLException(DbException.java:429)
+	at org.h2.message.DbException.get(DbException.java:205)
+	at org.h2.message.DbException.getInvalidValueException(DbException.java:280)
+	at org.h2.jdbc.JdbcPreparedStatement.setParameter(JdbcPreparedStatement.java:1503)
+	at org.h2.jdbc.JdbcPreparedStatement.setString(JdbcPreparedStatement.java:413)
+	at carsharing.DbClient.run(DbClient.java:36)
+	at carsharing.DAO.DbCompanyDao.add(DbCompanyDao.java:46)
+	at carsharing.Main.createCompany(Main.java:70)
+	at carsharing.Main.managerChoices(Main.java:48)
+	at carsharing.Main.mainMenu(Main.java:25)
+	at carsharing.Main.main(Main.java:13)
+2023-11-19 23:35:37 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLDataException: Invalid value "1" for parameter "parameterIndex" [90008-200]
+	at org.h2.message.DbException.getJdbcSQLException(DbException.java:590)
+	at org.h2.message.DbException.getJdbcSQLException(DbException.java:429)
+	at org.h2.message.DbException.get(DbException.java:205)
+	at org.h2.message.DbException.getInvalidValueException(DbException.java:280)
+	at org.h2.jdbc.JdbcPreparedStatement.setParameter(JdbcPreparedStatement.java:1503)
+	at org.h2.jdbc.JdbcPreparedStatement.setString(JdbcPreparedStatement.java:413)
+	at carsharing.DbClient.run(DbClient.java:35)
+	at carsharing.DAO.DbCompanyDao.add(DbCompanyDao.java:46)
+	at carsharing.Main.createCompany(Main.java:70)
+	at carsharing.Main.managerChoices(Main.java:48)
+	at carsharing.Main.mainMenu(Main.java:25)
+	at carsharing.Main.main(Main.java:13)
