@@ -1,0 +1,9 @@
+[1;31m
+Start test 1[0m
+Connecting to database...
+%Creating table in given database...
+
+Goodbye!
+1. Log in as a manager
+	0. Exit
+> 0
