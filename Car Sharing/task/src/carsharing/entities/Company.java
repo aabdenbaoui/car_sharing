@@ -3,6 +3,10 @@ package carsharing.entities;
 public class Company {
     private String name;
 
+    public Company() {
+
+    }
+
     public String getName() {
         return name;
     }

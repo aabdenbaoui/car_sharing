@@ -849,6 +849,12 @@ files:
           }
       }
     learner_created: true
+  - name: src/carsharing/entities/Car.java
+    visible: true
+    learner_created: true
 feedback_link: https://hyperskill.org/learn/step/11503#comment
-status: Unchecked
-record: -1
+status: Solved
+feedback:
+  message: Congratulations!
+  time: "Fri, 24 Nov 2023 19:03:54 UTC"
+record: 3
